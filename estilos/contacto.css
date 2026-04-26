@@ -1,0 +1,203 @@
+/* 1. RESET Y BASES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffc400; /* Color base del sitio */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 2. HEADER Y NAVEGACIÓN */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #589c5b83;
+  position: sticky;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.titulo {
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(221, 219, 210);
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.titulo-p {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(221, 219, 210);
+  font-family: 'Times New Roman', Times, serif;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1s;
+}
+
+/* MENÚ CORREGIDO */
+.ISC {
+  display: flex;
+  gap: 25px; /* Espacio real entre los enlaces del menú */
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: aparecerMenu 1s ease forwards;
+}
+
+nav a:hover {
+  color: #ffc400;
+}
+
+/* 3. SECCIÓN CONTACTO */
+.contacto {
+  background-color: #efefef;
+  padding: 80px 20px;
+}
+
+.container-contacto {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+
+.formulario {
+  flex: 1;
+}
+
+.linea {
+  width: 50px;
+  height: 3px;
+  background-color: #8b0000;
+  margin-bottom: 30px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #8b0000;
+}
+
+form button {
+  padding: 10px 30px;
+  border: 1px solid #333;
+  background: transparent;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #333;
+  color: white;
+}
+
+.mapa {
+  flex: 1;
+  min-height: 450px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+/* 4. FOOTER */
+footer {
+  background-color: #589c5b83;
+  padding: 40px 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #1f6f4a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #1f6f4a;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #1f6f4a;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* BOTÓN WHATSAPP*/
+.btn-whatsapp {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF !important;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+  z-index: 2000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+/* 6. ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparecerMenu {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 7. RESPONSIVE */
+@media (max-width: 900px) {
+  .container-contacto {
+    flex-direction: column;
+  }
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
